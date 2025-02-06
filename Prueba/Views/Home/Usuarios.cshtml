@@ -1,0 +1,349 @@
+@{
+    ViewData["Title"] = "Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 options-head">
+            <h2 class="title-section">Usuarios</h2>
+            <div class="actions-head">
+                <div class="input-group input-search">
+                    <span class="input-group-text" id=""><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Buscar" aria-label=""
+                        aria-describedby="" id="search-table">
+                </div>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#agregar-usuario"><button class="btn btn-primary">Agregar usuario</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <table class="table table-striped" id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Permisos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>lorem@ipsum.con</td>
+                        <td>000-000-00-00</td>
+                        <td>
+                            <p class="rol admin">Administrador</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ver-usuario">Ver detalle</a></li>
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editar-usuario">Editar</a></li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>lorem@ipsum.con</td>
+                        <td>000-000-00-00</td>
+                        <td>
+                            <p class="rol cliente">Cliente</p>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ver-usuario">Ver detalle</a></li>
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editar-usuario">Editar</a></li>
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@* Modales *@
+@* Modal para agregar usuario *@
+<div class="modal fade" id="agregar-usuario" tabindex="-1"role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="title-modal">Agregar usuario</h3>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <img src="~/img/user.png" alt="" class="img-user">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Foto de perfil</label>
+                                <input type="file" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Nombre</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Correo electrónico</label>
+                                <input type="email" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Teléfono</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Contraseña</label>
+                                <input type="password" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Rol</label>
+                                <select name="" id="" class="form-select">
+                                    <option value="">Administrador</option>
+                                    <option value="">Cliente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="row mt-3">
+                    <div class="col-md-12 options-modal">
+                        <a href="#"><button class="btn btn-primary-outline">Cancelar</button></a>
+                        <a href="#"><button class="btn btn-primary">Confirmar</button></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+@* Modal para editar usuario *@
+<div class="modal fade" id="editar-usuario" tabindex="-1"role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="title-modal">Editar usuario</h3>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <img src="~/img/user.png" alt="" class="img-user">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Foto de perfil</label>
+                                <input type="file" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Nombre</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Correo electrónico</label>
+                                <input type="email" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Teléfono</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Contraseña</label>
+                                <input type="password" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Rol</label>
+                                <select name="" id="" class="form-select">
+                                    <option value="">Administrador</option>
+                                    <option value="">Cliente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="row mt-3">
+                    <div class="col-md-12 options-modal">
+                        <a href="#"><button class="btn btn-primary-outline">Cancelar</button></a>
+                        <a href="#"><button class="btn btn-primary">Confirmar</button></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+@* Modal para ver detalles *@
+<div class="modal fade" id="ver-usuario" tabindex="-1"role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="title-modal">Ver detalles</h3>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <img src="~/img/user.png" alt="" class="img-user">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Foto de perfil</label>
+                                <input type="file" name="" id="" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Nombre</label>
+                                <input type="text" name="" id="" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Correo electrónico</label>
+                                <input type="email" name="" id="" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Teléfono</label>
+                                <input type="text" name="" id="" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Contraseña</label>
+                                <input type="password" name="" id="" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Rol</label>
+                                <select name="" id="" class="form-select" disabled>
+                                    <option value="">Administrador</option>
+                                    <option value="">Cliente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="row mt-3">
+                    <div class="col-md-12 text-center">
+                        <a href="#"><button class="btn btn-primary">Cerrar</button></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+@* Modal para eliminar *@
+<div class="modal fade" id="eliminar" tabindex="-1"role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title-eliminar">¿Estás seguro que deseas eliminar el registro?</h2>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12 options-modal">
+                        <a href="#"><button class="btn btn-primary-outline">Cancelar</button></a>
+                        <a href="#"><button class="btn btn-primary">Confirmar</button></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>inicializarTable("#dataTable", "#search-table");</script>
+}
