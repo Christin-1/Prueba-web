@@ -1091,3 +1091,7 @@ a.link-notif{
   font-size: 18px;
   font-weight: 600;
 }
+
+input.form-control, .form-select{
+  border-radius: 15px;
+}
